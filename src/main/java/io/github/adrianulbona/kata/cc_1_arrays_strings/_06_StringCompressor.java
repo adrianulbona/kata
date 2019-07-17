@@ -9,7 +9,7 @@ import java.util.stream.IntStream;
 
 import static java.util.stream.IntStream.range;
 
-public class _6_StringCompressor implements Function<String, String> {
+public class _06_StringCompressor implements Function<String, String> {
 
     @Override
     public String apply(String s) {

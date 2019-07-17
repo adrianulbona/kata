@@ -7,13 +7,13 @@ import java.util.function.Function;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class _6_StringCompressorTest {
+class _06_StringCompressorTest {
 
     private Function<String, String> compressor;
 
     @BeforeEach
     void setUp() {
-        this.compressor = new _6_StringCompressor();
+        this.compressor = new _06_StringCompressor();
     }
 
     @Test

@@ -7,7 +7,7 @@ import static java.util.function.Function.identity;
 import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.groupingBy;
 
-public class _4_PalindromePermutationChecker implements Predicate<String> {
+public class _04_PalindromePermutationChecker implements Predicate<String> {
 
     @Override
     public boolean test(String s) {

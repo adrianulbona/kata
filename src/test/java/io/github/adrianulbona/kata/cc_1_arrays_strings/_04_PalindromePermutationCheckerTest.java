@@ -7,13 +7,13 @@ import java.util.function.Predicate;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class _4_PalindromePermutationCheckerTest {
+class _04_PalindromePermutationCheckerTest {
 
     private Predicate<String> checker;
 
     @BeforeEach
     void setUp() {
-        this.checker = new _4_PalindromePermutationChecker();
+        this.checker = new _04_PalindromePermutationChecker();
     }
 
     @Test

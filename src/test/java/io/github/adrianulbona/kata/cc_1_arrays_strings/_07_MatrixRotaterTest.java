@@ -7,13 +7,13 @@ import java.util.function.Function;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
-class _7_MatrixRotaterTest {
+class _07_MatrixRotaterTest {
 
     private Function<int[][], int[][]> rotator;
 
     @BeforeEach
     void setUp() {
-        this.rotator = new _7_MatrixRotater();
+        this.rotator = new _07_MatrixRotater();
     }
 
     @Test

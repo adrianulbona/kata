@@ -4,17 +4,16 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.function.BiPredicate;
-import java.util.function.Predicate;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class _5_OneAwayCheckerTest {
+class _05_OneAwayCheckerTest {
 
     private BiPredicate<String, String> checker;
 
     @BeforeEach
     void setUp() {
-        this.checker = new _5_OneAwayChecker();
+        this.checker = new _05_OneAwayChecker();
     }
 
     @Test

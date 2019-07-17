@@ -7,7 +7,7 @@ import static java.lang.Math.max;
 import static java.lang.Math.min;
 import static java.util.stream.IntStream.range;
 
-public class _5_OneAwayChecker implements BiPredicate<String, String> {
+public class _05_OneAwayChecker implements BiPredicate<String, String> {
 
     @Override
     public boolean test(String original, String edited) {
