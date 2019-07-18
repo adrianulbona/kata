@@ -25,12 +25,10 @@ public class _08_ZeroBroadcaster implements Function<int[][], int[][]> {
                         }));
 
         final int[][] target = clone(matrix);
-        rowsWithZeros
+        range(0, rows)
                 .forEach(row -> range(0, columns)
+                        .filter(column -> rowsWithZeros.contains(row) || columnsWithZeros.contains(column))
                         .forEach(column -> target[row][column] = 0));
-        columnsWithZeros
-                .forEach(column -> range(0, rows)
-                        .forEach(row -> target[row][column] = 0));
         return target;
     }
 
