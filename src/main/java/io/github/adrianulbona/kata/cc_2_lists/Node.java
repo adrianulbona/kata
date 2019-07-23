@@ -25,4 +25,21 @@ class Node {
         }
         return node(this.value, this.next.removeAll(value));
     }
+
+    Node get(int index) {
+        if (NIL.equals(this)) {
+            return NIL;
+        }
+        if (index == 0) {
+            return this;
+        }
+        return this.next.get(index - 1);
+    }
+
+    int size() {
+        if (NIL.equals(this)) {
+            return 0;
+        }
+        return this.next.size() + 1;
+    }
 }
