@@ -72,4 +72,12 @@ class Node {
         return NIL.equals(this) ? orElse : this.next;
 
     }
+
+    Node reverse() {
+        if (NIL.equals(this)) {
+            return NIL;
+        }
+
+        return this.next().reverse().append(node(this.value));
+    }
 }

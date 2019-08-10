@@ -36,4 +36,29 @@ class _05_DigitAdderTest {
         final Node expected = node(2, node(1, node(9)));
         assertEquals(expected, this.adder.apply(x, y));
     }
+
+    @Test
+    void apply716and592reversed() {
+        final Node x = node(6, node(1, node(7)));
+        final Node y = node(2, node(9, node(5)));
+        final Node expected = node(9, node(1, node(2)));
+        assertEquals(expected, this.adder.apply(x.reverse(), y.reverse()).reverse());
+    }
+
+    @Test
+    void reverseNIL() {
+        assertEquals(NIL, NIL.reverse());
+    }
+
+    @Test
+    void reverse1() {
+        assertEquals(node(1), node(1).reverse());
+    }
+
+    @Test
+    void reverse21() {
+        final Node input = node(2, node(1));
+        final Node expected = node(1, node(2));
+        assertEquals(expected, input.reverse());
+    }
 }
