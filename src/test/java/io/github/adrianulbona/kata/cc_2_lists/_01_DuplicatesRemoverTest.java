@@ -25,14 +25,14 @@ class _01_DuplicatesRemoverTest {
 
     @Test
     void applyNonDuplicates() {
-        final Node list = node(1, node(2, node(3, NIL)));
+        final Node list = node(1, node(2, node(3)));
         assertEquals(list, this.remover.apply(list));
     }
 
     @Test
     void applyDuplicates() {
-        final Node list = node(1, node(2, node(3, node(1, node(1, node(3, NIL))))));
-        final Node cleaned = node(1, node(2, node(3, NIL)));
+        final Node list = node(1, node(2, node(3, node(1, node(1, node(3))))));
+        final Node cleaned = node(1, node(2, node(3)));
         assertEquals(cleaned, this.remover.apply(list));
     }
 }

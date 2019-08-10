@@ -12,8 +12,12 @@ class Node {
     private final int value;
     private final Node next;
 
-    static Node node(int data, Node next) {
-        return new Node(data, next);
+    static Node node(int value, Node next) {
+        return new Node(value, next);
+    }
+
+    static Node node(int value) {
+        return new Node(value, NIL);
     }
 
     Node removeAll(int value) {
@@ -58,5 +62,14 @@ class Node {
             return other;
         }
         return node(this.value, this.next.append(other));
+    }
+
+    int valueOrElse(int orElse) {
+        return NIL.equals(this) ? orElse : this.value;
+    }
+
+    Node nextOrElse(Node orElse) {
+        return NIL.equals(this) ? orElse : this.next;
+
     }
 }

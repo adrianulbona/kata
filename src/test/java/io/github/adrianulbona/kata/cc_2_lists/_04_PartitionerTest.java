@@ -25,14 +25,14 @@ class _04_PartitionerTest {
 
     @Test
     void partitionAllSmaller() {
-        final Node input = node(1, node(2, node(3, NIL)));
+        final Node input = node(1, node(2, node(3)));
         assertEquals(input, this.partitioner.apply(input, 4));
     }
 
     @Test
     void partitionSomeSmallerSomeBigger() {
-        final Node input = node(1, node(5, node(2, node(3, node(2, NIL)))));
-        final Node expected = node(1, node(2, node(2, node(5, node(3, NIL)))));
+        final Node input = node(1, node(5, node(2, node(3, node(2)))));
+        final Node expected = node(1, node(2, node(2, node(5, node(3)))));
         assertEquals(expected, this.partitioner.apply(input, 3));
     }
 }

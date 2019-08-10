@@ -25,7 +25,7 @@ class _02_KLastFinderTest {
 
     @Test
     void apply2ndLastFrom3Nodes() {
-        final Node list = node(1, node(2, node(3, NIL)));
+        final Node list = node(1, node(2, node(3)));
         assertEquals(2, this.finder.apply(2, list).value());
     }
 }
