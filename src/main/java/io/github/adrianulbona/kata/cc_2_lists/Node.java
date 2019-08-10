@@ -1,16 +1,16 @@
 package io.github.adrianulbona.kata.cc_2_lists;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.util.function.Predicate;
+
 @Data
-@AllArgsConstructor
 class Node {
 
     public static Node NIL = node(-1, null);
 
-    private int value;
-    private Node next;
+    private final int value;
+    private final Node next;
 
     static Node node(int data, Node next) {
         return new Node(data, next);
@@ -24,6 +24,16 @@ class Node {
             return this.next.removeAll(value);
         }
         return node(this.value, this.next.removeAll(value));
+    }
+
+    Node filter(Predicate<Node> predicate) {
+        if (NIL.equals(this)) {
+            return this;
+        }
+        if (predicate.test(this)) {
+            return node(this.value, this.next.filter(predicate));
+        }
+        return this.next.filter(predicate);
     }
 
     Node get(int index) {
@@ -41,5 +51,12 @@ class Node {
             return 0;
         }
         return this.next.size() + 1;
+    }
+
+    Node append(Node other) {
+        if (NIL.equals(this)) {
+            return other;
+        }
+        return node(this.value, this.next.append(other));
     }
 }
