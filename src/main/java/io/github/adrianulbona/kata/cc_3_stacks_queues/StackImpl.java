@@ -11,17 +11,17 @@ class StackImpl<E> implements Stack<E> {
     private final int capacity;
     private final List<E> data;
 
-    static <E> StackImpl<E> withCapacity(int capacity) {
+    static <E> Stack<E> withCapacity(int capacity) {
         return new StackImpl<>(capacity, new ArrayList<>());
     }
 
-    static <E> StackImpl<E> create() {
+    static <E> Stack<E> create() {
         return withCapacity(10);
     }
 
     @Override
     public void push(E x) {
-        if (data.size() + 1 == capacity) {
+        if (data.size() == capacity) {
             throw new RuntimeException("Stack full");
         }
         this.data.add(x);
@@ -44,7 +44,17 @@ class StackImpl<E> implements Stack<E> {
     }
 
     @Override
+    public E get(int index) {
+        return this.data.get(index);
+    }
+
+    @Override
     public boolean isEmpty() {
         return this.data.isEmpty();
+    }
+
+    @Override
+    public boolean isFull() {
+        return this.capacity == this.data.size();
     }
 }

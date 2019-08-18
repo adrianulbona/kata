@@ -29,8 +29,18 @@ class _02_StackWithMin implements Stack<Integer> {
     }
 
     @Override
+    public Integer get(int index) {
+        return this.stack.get(index);
+    }
+
+    @Override
     public boolean isEmpty() {
         return this.stack.isEmpty();
+    }
+
+    @Override
+    public boolean isFull() {
+        return this.stack.isFull();
     }
 
     int min() {

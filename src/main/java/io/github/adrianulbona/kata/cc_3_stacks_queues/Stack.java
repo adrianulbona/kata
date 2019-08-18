@@ -8,5 +8,9 @@ public interface Stack<E> {
 
     E pop();
 
+    E get(int index);
+
     boolean isEmpty();
+
+    boolean isFull();
 }
