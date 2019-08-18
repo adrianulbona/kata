@@ -1,12 +1,12 @@
 package io.github.adrianulbona.kata.cc_3_stacks_queues;
 
-public interface Stack {
+public interface Stack<E> {
 
-    void push(int x);
+    void push(E x);
 
-    int peek();
+    E peek();
 
-    int pop();
+    E pop();
 
     boolean isEmpty();
 }
