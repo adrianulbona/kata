@@ -1,11 +1,13 @@
 package io.github.adrianulbona.kata.cc_3_stacks_queues;
 
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @RequiredArgsConstructor
+@Data
 class StackImpl<E> implements Stack<E> {
 
     private final int capacity;
