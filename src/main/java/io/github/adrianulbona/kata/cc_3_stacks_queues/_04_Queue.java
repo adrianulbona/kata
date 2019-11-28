@@ -8,7 +8,6 @@ class _04_Queue<E> implements Queue<E> {
     private final Stack<E> stack;
     private final Stack<E> buffer;
 
-
     static <E> _04_Queue<E> create() {
         return new _04_Queue<>(StackImpl.create(), StackImpl.create());
     }
