@@ -9,11 +9,11 @@ import java.util.function.Function;
 import static io.github.adrianulbona.kata.cc_4_graphs_trees.Node.node;
 import static org.junit.jupiter.api.Assertions.*;
 
-class _02_Tree2ListsTest {
+class _03_Tree2ListsTest {
 
     @Test
     void apply1Level() {
-        final Function<Node, Map<Integer, List<Integer>>> transformer = new _02_Tree2Lists();
+        final Function<Node, Map<Integer, List<Integer>>> transformer = new _03_Tree2Lists();
 
         final Map<Integer, List<Integer>> actual = transformer.apply(node(1));
         assertEquals(1, actual.size());
@@ -22,7 +22,7 @@ class _02_Tree2ListsTest {
 
     @Test
     void apply3Levels() {
-        final Function<Node, Map<Integer, List<Integer>>> transformer = new _02_Tree2Lists();
+        final Function<Node, Map<Integer, List<Integer>>> transformer = new _03_Tree2Lists();
 
         final Node tree = node(4, node(2, node(1), node(3)), node(6, node(5), node(7)));
         final Map<Integer, List<Integer>> actual = transformer.apply(tree);
