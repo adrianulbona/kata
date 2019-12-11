@@ -25,4 +25,8 @@ public class Node {
     public static Node node(int value) {
         return new Node(value, empty(), empty());
     }
+
+    public boolean isLeaf() {
+        return !(this.left.isPresent() || this.right.isPresent());
+    }
 }
