@@ -9,6 +9,8 @@ import static java.util.Optional.empty;
 @Data
 public class Node {
 
+    public static Node NIL;
+
     private final int value;
     private final Optional<Node> left;
     private final Optional<Node> right;
