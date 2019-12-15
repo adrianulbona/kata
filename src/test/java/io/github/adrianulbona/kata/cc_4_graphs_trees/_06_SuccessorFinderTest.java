@@ -24,8 +24,6 @@ class _06_SuccessorFinderTest {
         final Node node_1 = node(1);
         final Node node_2 = node(2, node_1, NIL);
 
-        node_1.parent(node_2);
-
         assertEquals(node_2, finder.apply(node_1));
     }
 
@@ -33,14 +31,11 @@ class _06_SuccessorFinderTest {
     @Test
     void applyChildGrandParent() {
         final Function<Node, Node> finder = new _06_SuccessorFinder();
+
         final Node node_1 = node(1);
         final Node node_3 = node(3);
         final Node node_2 = node(2, node_1, node_3);
         final Node node_5 = node(5, node_2, NIL);
-
-        node_1.parent(node_2);
-        node_3.parent(node_2);
-        node_2.parent(node_5);
 
         assertEquals(node_5, finder.apply(node_3));
     }

@@ -8,16 +8,16 @@ public class _06_SuccessorFinder implements Function<Node, Node> {
 
     @Override
     public Node apply(Node node) {
-        return findSuccess(node, node);
+        return findSuccessor(node, node);
     }
 
-    private Node findSuccess(Node origin, Node current) {
+    private Node findSuccessor(Node origin, Node current) {
         if (NIL.equals(current)) {
             return NIL;
         }
         if (origin.value() < current.value()) {
             return current;
         }
-        return findSuccess(origin, current.parent());
+        return findSuccessor(origin, current.parent());
     }
 }
