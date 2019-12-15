@@ -1,0 +1,23 @@
+package io.github.adrianulbona.kata.cc_4_graphs_trees;
+
+import java.util.function.Function;
+
+import static io.github.adrianulbona.kata.cc_4_graphs_trees.Node.NIL;
+
+public class _06_SuccessorFinder implements Function<Node, Node> {
+
+    @Override
+    public Node apply(Node node) {
+        return findSuccess(node, node);
+    }
+
+    private Node findSuccess(Node origin, Node current) {
+        if (NIL.equals(current)) {
+            return NIL;
+        }
+        if (origin.value() < current.value()) {
+            return current;
+        }
+        return findSuccess(origin, current.parent());
+    }
+}

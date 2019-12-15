@@ -7,6 +7,8 @@ public class Node {
 
     public static final Node NIL = new Node(Integer.MIN_VALUE, null, null);
 
+    private Node parent = NIL;
+
     private final int value;
     private final Node left;
     private final Node right;
