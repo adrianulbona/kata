@@ -2,14 +2,12 @@ package io.github.adrianulbona.kata.cc_4_graphs_trees;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.function.Function;
 import java.util.function.Predicate;
 
+import static io.github.adrianulbona.kata.cc_4_graphs_trees.Node.NIL;
 import static io.github.adrianulbona.kata.cc_4_graphs_trees.Node.node;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class _04_BalancedTreeCheckerTest {
 
@@ -32,7 +30,7 @@ class _04_BalancedTreeCheckerTest {
     void testUnbalanced() {
         final Predicate<Node> checker = new _04_BalancedTreeChecker();
 
-        final Node tree = node(4, Optional.of(node(2, node(1), node(3))), Optional.empty());
+        final Node tree = node(4, node(2, node(1), node(3)), NIL);
         assertFalse(checker.test(tree));
     }
 }

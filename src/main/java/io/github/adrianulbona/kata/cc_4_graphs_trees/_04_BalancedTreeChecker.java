@@ -2,28 +2,31 @@ package io.github.adrianulbona.kata.cc_4_graphs_trees;
 
 import lombok.Data;
 
-import java.util.Optional;
 import java.util.function.Predicate;
+
+import static io.github.adrianulbona.kata.cc_4_graphs_trees.Node.NIL;
 
 public class _04_BalancedTreeChecker implements Predicate<Node> {
 
     @Override
     public boolean test(Node node) {
-        return test(Optional.of(node)).balanced;
+        return checkBalanced(node).balanced;
     }
 
-    private BalancedStatus test(Optional<Node> optionalNode) {
-        return optionalNode.map(node -> {
-            final BalancedStatus balancedStatusLeft = test(node.left());
-            final BalancedStatus balancedStatusRight = test(node.right());
-            final int height = Math.max(balancedStatusLeft.height, balancedStatusRight.height) + 1;
-            if (balancedStatusLeft.balanced
-                    && balancedStatusRight.balanced
-                    && Math.abs(balancedStatusLeft.height - balancedStatusRight.height) < 2) {
-                return new BalancedStatus(true, height);
-            }
-            return new BalancedStatus(false, height);
-        }).orElse(new BalancedStatus(true, 0));
+    private BalancedStatus checkBalanced(Node node) {
+        if (NIL.equals(node)) {
+            return new BalancedStatus(true, 0);
+        }
+
+        final BalancedStatus balancedStatusLeft = checkBalanced(node.left());
+        final BalancedStatus balancedStatusRight = checkBalanced(node.right());
+        final int height = Math.max(balancedStatusLeft.height, balancedStatusRight.height) + 1;
+        if (balancedStatusLeft.balanced
+                && balancedStatusRight.balanced
+                && Math.abs(balancedStatusLeft.height - balancedStatusRight.height) < 2) {
+            return new BalancedStatus(true, height);
+        }
+        return new BalancedStatus(false, height);
     }
 
     @Data
