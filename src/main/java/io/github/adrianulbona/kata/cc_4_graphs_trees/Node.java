@@ -7,7 +7,7 @@ import lombok.ToString;
 @Data
 public class Node {
 
-    public static final Node NIL = new Node(null, null, null);
+    public static final Node NIL = new Node(null, null, null, 0);
 
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
@@ -16,9 +16,10 @@ public class Node {
     private final Integer value;
     private final Node left;
     private final Node right;
+    private final Integer size;
 
     public static Node node(int value, Node left, Node right) {
-        final Node node = new Node(value, left, right);
+        final Node node = new Node(value, left, right, 1 + left.size + right.size);
         if (!NIL.equals(left)) {
             left.parent(node);
         }
@@ -29,6 +30,6 @@ public class Node {
     }
 
     public static Node node(int value) {
-        return new Node(value, NIL, NIL);
+        return new Node(value, NIL, NIL, 1);
     }
 }
