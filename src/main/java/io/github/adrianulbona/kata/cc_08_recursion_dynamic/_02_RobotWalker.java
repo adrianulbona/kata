@@ -8,7 +8,6 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static io.github.adrianulbona.kata.cc_08_recursion_dynamic._02_RobotWalker.Coord;
 import static io.github.adrianulbona.kata.cc_08_recursion_dynamic._02_RobotWalker.Grid;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.Stream.concat;
@@ -31,26 +30,6 @@ class _02_RobotWalker implements Function<Grid, Set<List<Coord>>> {
         return grid.explore(currentCell).stream()
                 .map(neighbour -> concat(path.stream(), of(neighbour)).collect(toList()))
                 .flatMap(extendedPath -> explore(extendedPath, grid));
-    }
-
-    @Data
-    static class Coord {
-
-        private final int row;
-        private final int col;
-
-        static Coord coord(int row, int col) {
-            return new Coord(row, col);
-        }
-
-        Coord down() {
-            return coord(this.row + 1, this.col);
-        }
-
-        Coord right() {
-            return coord(this.row, this.col + 1);
-        }
-
     }
 
     @Data
@@ -79,7 +58,7 @@ class _02_RobotWalker implements Function<Grid, Set<List<Coord>>> {
         }
 
         private boolean valid(Coord coord) {
-            return !this.offLimitCells.contains(coord) && coord.row < this.rows && coord.col < this.columns;
+            return !this.offLimitCells.contains(coord) && coord.row() < this.rows && coord.col() < this.columns;
         }
     }
 }

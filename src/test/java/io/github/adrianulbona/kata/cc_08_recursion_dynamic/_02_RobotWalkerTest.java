@@ -1,7 +1,6 @@
 package io.github.adrianulbona.kata.cc_08_recursion_dynamic;
 
 import io.github.adrianulbona.kata.cc_08_recursion_dynamic._02_RobotWalker.Grid;
-import io.github.adrianulbona.kata.cc_08_recursion_dynamic._02_RobotWalker.Coord;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -9,7 +8,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.Function;
 
-import static io.github.adrianulbona.kata.cc_08_recursion_dynamic._02_RobotWalker.Coord.coord;
+import static io.github.adrianulbona.kata.cc_08_recursion_dynamic.Coord.coord;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class _02_RobotWalkerTest {
