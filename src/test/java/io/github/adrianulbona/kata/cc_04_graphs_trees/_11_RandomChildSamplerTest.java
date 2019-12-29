@@ -30,7 +30,6 @@ class _11_RandomChildSamplerTest {
                 .mapToObj(__ -> sampler.apply(tree).value())
                 .collect(groupingBy(identity(), counting()))
                 .forEach((__, count) -> {
-                    System.out.println(count);
                     assertTrue(Math.abs(count - 100_000) < 1_000); // < 0.1%
                 });
     }
