@@ -2,7 +2,7 @@ package io.github.adrianulbona.kata.cc_08_recursion_dynamic;
 
 import java.util.function.BiFunction;
 
-public class _05_Multiplier implements BiFunction<Integer, Integer, Integer> {
+class _05_Multiplier implements BiFunction<Integer, Integer, Integer> {
 
     @Override
     public Integer apply(Integer a, Integer b) {

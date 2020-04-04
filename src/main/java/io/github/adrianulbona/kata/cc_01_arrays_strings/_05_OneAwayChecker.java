@@ -6,21 +6,16 @@ import static java.lang.Math.max;
 import static java.lang.Math.min;
 import static java.util.stream.IntStream.range;
 
-public class _05_OneAwayChecker implements BiPredicate<String, String> {
+class _05_OneAwayChecker implements BiPredicate<String, String> {
 
     @Override
     public boolean test(String original, String edited) {
-        switch (EditType.on(original, edited)) {
-            case REPLACE:
-                return validReplace(original, edited);
-            case INSERT:
-                return validInsert(original, edited);
-            case DELETE:
-                return validInsert(edited, original);
-            case UNKNOWN:
-            default:
-                return false;
-        }
+        return switch (EditType.on(original, edited)) {
+            case REPLACE -> validReplace(original, edited);
+            case INSERT -> validInsert(original, edited);
+            case DELETE -> validInsert(edited, original);
+            default -> false;
+        };
     }
 
     private boolean validInsert(String original, String edited) {

@@ -5,7 +5,7 @@ import java.util.function.Function;
 
 import static io.github.adrianulbona.kata.cc_04_graphs_trees.Node.NIL;
 
-public class _03_Tree2Lists implements Function<Node, Map<Integer, List<Integer>>> {
+class _03_Tree2Lists implements Function<Node, Map<Integer, List<Integer>>> {
 
     @Override
     public Map<Integer, List<Integer>> apply(Node node) {

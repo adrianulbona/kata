@@ -1,12 +1,10 @@
 package io.github.adrianulbona.kata.cc_04_graphs_trees;
 
-import lombok.Data;
-
 import java.util.function.Predicate;
 
 import static io.github.adrianulbona.kata.cc_04_graphs_trees.Node.NIL;
 
-public class _04_BalancedTreeChecker implements Predicate<Node> {
+class _04_BalancedTreeChecker implements Predicate<Node> {
 
     @Override
     public boolean test(Node node) {
@@ -29,9 +27,6 @@ public class _04_BalancedTreeChecker implements Predicate<Node> {
         return new BalancedStatus(false, height);
     }
 
-    @Data
-    private static class BalancedStatus {
-        private final boolean balanced;
-        private final int height;
+    private record BalancedStatus(boolean balanced, int height) {
     }
 }

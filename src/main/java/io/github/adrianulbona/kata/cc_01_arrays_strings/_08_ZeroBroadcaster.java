@@ -8,7 +8,7 @@ import java.util.function.Function;
 import static java.util.Arrays.stream;
 import static java.util.stream.IntStream.range;
 
-public class _08_ZeroBroadcaster implements Function<int[][], int[][]> {
+class _08_ZeroBroadcaster implements Function<int[][], int[][]> {
 
     @Override
     public int[][] apply(int[][] matrix) {

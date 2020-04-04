@@ -1,17 +1,9 @@
 package io.github.adrianulbona.kata.cc_03_stacks_queues;
 
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
-
 import java.util.ArrayList;
 import java.util.List;
 
-@RequiredArgsConstructor
-@Data
-class StackImpl<E> implements Stack<E> {
-
-    private final int capacity;
-    private final List<E> data;
+record StackImpl<E>(int capacity, List<E> data) implements Stack<E> {
 
     static <E> Stack<E> withCapacity(int capacity) {
         return new StackImpl<>(capacity, new ArrayList<>());

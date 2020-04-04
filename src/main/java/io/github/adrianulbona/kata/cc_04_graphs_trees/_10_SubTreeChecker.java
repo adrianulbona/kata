@@ -4,7 +4,7 @@ import java.util.function.BiPredicate;
 
 import static io.github.adrianulbona.kata.cc_04_graphs_trees.Node.NIL;
 
-public class _10_SubTreeChecker implements BiPredicate<Node, Node> {
+class _10_SubTreeChecker implements BiPredicate<Node, Node> {
 
     @Override
     public boolean test(Node potentialChild, Node tree) {

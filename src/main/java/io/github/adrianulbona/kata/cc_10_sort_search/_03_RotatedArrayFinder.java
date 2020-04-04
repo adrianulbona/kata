@@ -2,7 +2,7 @@ package io.github.adrianulbona.kata.cc_10_sort_search;
 
 import java.util.function.BiFunction;
 
-public class _03_RotatedArrayFinder implements BiFunction<int[], Integer, Integer> {
+class _03_RotatedArrayFinder implements BiFunction<int[], Integer, Integer> {
 
     @Override
     public Integer apply(int[] ints, Integer el) {

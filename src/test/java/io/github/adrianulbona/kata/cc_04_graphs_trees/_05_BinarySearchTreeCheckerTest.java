@@ -39,5 +39,4 @@ class _05_BinarySearchTreeCheckerTest {
         final Node tree = node(4, node(2, node(1), node(10)), node(6, node(5), node(7)));
         assertFalse(checker.test(tree));
     }
-
 }

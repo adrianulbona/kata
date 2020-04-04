@@ -6,7 +6,7 @@ import java.util.function.BiFunction;
 
 import static io.github.adrianulbona.kata.cc_04_graphs_trees.Node.NIL;
 
-public class _12_PathSumCounter implements BiFunction<Node, Integer, Integer> {
+class _12_PathSumCounter implements BiFunction<Node, Integer, Integer> {
 
     @Override
     public Integer apply(Node node, Integer sumToFind) {

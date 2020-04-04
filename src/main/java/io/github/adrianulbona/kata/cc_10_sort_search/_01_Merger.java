@@ -6,7 +6,7 @@ import java.util.function.BiConsumer;
 import static java.util.stream.IntStream.range;
 import static java.util.stream.IntStream.rangeClosed;
 
-public class _01_Merger implements BiConsumer<int[], int[]> {
+class _01_Merger implements BiConsumer<int[], int[]> {
 
     @Override
     public void accept(int[] a, int[] b) {

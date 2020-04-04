@@ -1,14 +1,8 @@
 package io.github.adrianulbona.kata.cc_08_recursion_dynamic;
 
-import lombok.Data;
-
 import java.util.stream.Stream;
 
-@Data
-class Coord {
-
-    private final int row;
-    private final int col;
+record Coord(int row, int col) {
 
     static Coord coord(int row, int col) {
         return new Coord(row, col);

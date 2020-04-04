@@ -4,7 +4,7 @@ import java.util.function.Predicate;
 
 import static io.github.adrianulbona.kata.cc_04_graphs_trees.Node.NIL;
 
-public class _05_BinarySearchTreeChecker implements Predicate<Node> {
+class _05_BinarySearchTreeChecker implements Predicate<Node> {
 
     @Override
     public boolean test(Node node) {

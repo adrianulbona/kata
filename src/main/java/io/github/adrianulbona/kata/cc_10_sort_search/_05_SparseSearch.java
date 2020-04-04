@@ -3,7 +3,7 @@ package io.github.adrianulbona.kata.cc_10_sort_search;
 import java.util.NoSuchElementException;
 import java.util.function.BiFunction;
 
-public class _05_SparseSearch implements BiFunction<String[], String, Integer> {
+class _05_SparseSearch implements BiFunction<String[], String, Integer> {
 
     @Override
     public Integer apply(String[] sparseArray, String el) {

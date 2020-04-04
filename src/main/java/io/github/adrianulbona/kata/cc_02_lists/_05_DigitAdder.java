@@ -6,7 +6,7 @@ import java.util.function.BiFunction;
 import static io.github.adrianulbona.kata.cc_02_lists.Node.NIL;
 import static io.github.adrianulbona.kata.cc_02_lists.Node.node;
 
-public class _05_DigitAdder implements BiFunction<Node, Node, Node> {
+class _05_DigitAdder implements BiFunction<Node, Node, Node> {
 
     @Override
     public Node apply(Node x, Node y) {

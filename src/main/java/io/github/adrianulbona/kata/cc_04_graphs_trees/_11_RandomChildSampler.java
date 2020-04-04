@@ -1,13 +1,8 @@
 package io.github.adrianulbona.kata.cc_04_graphs_trees;
 
-import lombok.RequiredArgsConstructor;
-
 import java.util.function.Function;
 
-@RequiredArgsConstructor
-public class _11_RandomChildSampler implements Function<Node, Node> {
-
-    private final Function<Integer, Integer> intSampler;
+record _11_RandomChildSampler(Function<Integer, Integer> intSampler) implements Function<Node, Node> {
 
     @Override
     public Node apply(Node node) {

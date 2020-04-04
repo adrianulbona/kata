@@ -4,7 +4,7 @@ import java.util.function.Function;
 
 import static java.util.stream.IntStream.range;
 
-public class _03_SpaceReplacer implements Function<char[], char[]> {
+class _03_SpaceReplacer implements Function<char[], char[]> {
 
     @Override
     public char[] apply(char[] chars) {

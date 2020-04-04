@@ -5,7 +5,7 @@ import java.util.function.Function;
 import static io.github.adrianulbona.kata.cc_04_graphs_trees.Node.NIL;
 import static io.github.adrianulbona.kata.cc_04_graphs_trees.Node.node;
 
-public class _02_Array2Tree implements Function<int[], Node> {
+class _02_Array2Tree implements Function<int[], Node> {
 
     @Override
     public Node apply(int[] sortedArray) {

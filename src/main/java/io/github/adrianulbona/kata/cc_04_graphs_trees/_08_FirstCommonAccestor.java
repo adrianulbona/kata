@@ -4,7 +4,7 @@ import java.util.function.BiFunction;
 
 import static io.github.adrianulbona.kata.cc_04_graphs_trees.Node.NIL;
 
-public class _08_FirstCommonAccestor implements BiFunction<Node, Node, Node> {
+class _08_FirstCommonAccestor implements BiFunction<Node, Node, Node> {
 
     @Override
     public Node apply(Node first, Node second) {

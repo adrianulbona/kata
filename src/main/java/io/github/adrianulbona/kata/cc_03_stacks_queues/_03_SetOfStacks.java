@@ -1,11 +1,6 @@
 package io.github.adrianulbona.kata.cc_03_stacks_queues;
 
-import lombok.RequiredArgsConstructor;
-
-@RequiredArgsConstructor
-class _03_SetOfStacks<E> implements Stack<E> {
-
-    private final Stack<Stack<E>> stacks;
+record  _03_SetOfStacks<E>(Stack<Stack<E>> stacks) implements Stack<E> {
 
     static <E> _03_SetOfStacks<E> create() {
         return new _03_SetOfStacks<>(StackImpl.create());

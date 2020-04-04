@@ -4,7 +4,7 @@ import java.util.function.Function;
 
 import static java.util.stream.IntStream.rangeClosed;
 
-public class _01_StepSequenceCounter implements Function<Integer, Integer> {
+class _01_StepSequenceCounter implements Function<Integer, Integer> {
 
     @Override
     public Integer apply(Integer n) {

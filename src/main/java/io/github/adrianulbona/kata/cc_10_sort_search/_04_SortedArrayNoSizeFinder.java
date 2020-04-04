@@ -1,12 +1,10 @@
 package io.github.adrianulbona.kata.cc_10_sort_search;
 
-import lombok.Data;
-
 import java.util.function.BiFunction;
 
 import static io.github.adrianulbona.kata.cc_10_sort_search._04_SortedArrayNoSizeFinder.Listy;
 
-public class _04_SortedArrayNoSizeFinder implements BiFunction<Listy, Integer, Integer> {
+class _04_SortedArrayNoSizeFinder implements BiFunction<Listy, Integer, Integer> {
 
     @Override
     public Integer apply(Listy listy, Integer el) {
@@ -28,9 +26,8 @@ public class _04_SortedArrayNoSizeFinder implements BiFunction<Listy, Integer, I
         return apply(listy, middle, end, el);
     }
 
-    @Data
-    static class Listy {
-        private final int[] data;
+
+    record Listy(int[] data) {
 
         int elementAt(int index) {
             if (index >= data.length) {

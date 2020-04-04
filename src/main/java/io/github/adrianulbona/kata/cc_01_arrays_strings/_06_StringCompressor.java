@@ -1,19 +1,21 @@
 package io.github.adrianulbona.kata.cc_01_arrays_strings;
 
-import lombok.Data;
-
-import java.util.*;
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Optional;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import static io.github.adrianulbona.kata.cc_01_arrays_strings._06_StringCompressor.Counter.counter;
 import static java.util.stream.IntStream.range;
 
-public class _06_StringCompressor implements Function<String, String> {
+class _06_StringCompressor implements Function<String, String> {
 
     @Override
     public String apply(String s) {
-        final LinkedList<CharacterCount> countStack = new LinkedList<>();
+        final LinkedList<Counter> countStack = new LinkedList<>();
         range(0, s.length())
                 .forEach(index -> {
                     final char currentChar = s.charAt(index);
@@ -30,34 +32,34 @@ public class _06_StringCompressor implements Function<String, String> {
         return s;
     }
 
-    private CharacterCount safePeek(Deque<CharacterCount> counts) {
+    private Counter safePeek(Deque<Counter> counts) {
         return Optional.ofNullable(counts.peek()).orElseThrow();
     }
 
-    private void pushIfDifferent(Deque<CharacterCount> counts, char currentChar) {
-        final Optional<CharacterCount> optionalPeek = Optional.ofNullable(counts.peek());
+    private void pushIfDifferent(Deque<Counter> counts, char currentChar) {
+        final Optional<Counter> optionalPeek = Optional.ofNullable(counts.peek());
         final boolean firstChar = optionalPeek.isEmpty();
         final boolean differentChar = optionalPeek.filter(peek -> peek.character() != currentChar).isPresent();
         if (firstChar || differentChar) {
-            counts.push(new CharacterCount(currentChar));
+            counts.push(counter(currentChar));
         }
     }
 
-    @Data
-    private static class CharacterCount {
+    record Counter(char character, AtomicInteger count) {
 
-        static final CharacterCount START = new CharacterCount('*');
-
-        private final char character;
-        private int count = 0;
+        static final Counter START = counter('*');
 
         void increment() {
-            count++;
+            this.count.incrementAndGet();
+        }
+
+        static Counter counter(char character) {
+            return new Counter(character, new AtomicInteger());
         }
 
         @Override
         public String toString() {
-            return String.format("%s%d", character, count);
+            return String.format("%s%d", character, count.get());
         }
     }
 }

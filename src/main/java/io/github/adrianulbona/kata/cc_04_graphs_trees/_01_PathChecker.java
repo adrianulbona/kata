@@ -1,14 +1,9 @@
 package io.github.adrianulbona.kata.cc_04_graphs_trees;
 
-import lombok.Data;
-
 import java.util.*;
 import java.util.function.BiPredicate;
 
-@Data
-public class _01_PathChecker implements BiPredicate<Integer, Integer> {
-
-    private final Map<Integer, List<Integer>> graph;
+record _01_PathChecker(Map<Integer, List<Integer>> graph) implements BiPredicate<Integer, Integer> {
 
     @Override
     public boolean test(Integer from, Integer to) {

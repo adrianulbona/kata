@@ -1,16 +1,10 @@
 package io.github.adrianulbona.kata.cc_02_lists;
 
-import lombok.Data;
-
 import java.util.function.Predicate;
 
-@Data
-class Node {
+record Node(int value, Node next) {
 
     public static Node NIL = node(-1, null);
-
-    private final int value;
-    private final Node next;
 
     static Node node(int value, Node next) {
         return new Node(value, next);

@@ -11,7 +11,7 @@ import static java.util.stream.IntStream.range;
 import static java.util.stream.Stream.concat;
 import static java.util.stream.Stream.of;
 
-public class _12_QueensSolver implements Function<List<Coord>, Stream<List<Coord>>> {
+class _12_QueensSolver implements Function<List<Coord>, Stream<List<Coord>>> {
 
     @Override
     public Stream<List<Coord>> apply(List<Coord> queens) {

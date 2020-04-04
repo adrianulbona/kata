@@ -1,28 +1,20 @@
 package io.github.adrianulbona.kata.cc_03_stacks_queues;
 
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
-
 import java.util.LinkedList;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
 
-@RequiredArgsConstructor
 class _06_Shelter {
 
     private final LinkedList<RegisteredPet> cats = new LinkedList<>();
     private final LinkedList<RegisteredPet> dogs = new LinkedList<>();
 
-    private AtomicInteger nextRegisterId = new AtomicInteger(0);
+    private final AtomicInteger nextRegisterId = new AtomicInteger(0);
 
     void enqueue(Pet pet) {
         switch (pet.type) {
-            case CAT:
-                this.cats.push(new RegisteredPet(pet, nextRegisterId.getAndIncrement()));
-                break;
-            case DOG:
-                this.dogs.push(new RegisteredPet(pet, nextRegisterId.getAndIncrement()));
-                break;
+            case CAT -> this.cats.push(new RegisteredPet(pet, nextRegisterId.getAndIncrement()));
+            case DOG -> this.dogs.push(new RegisteredPet(pet, nextRegisterId.getAndIncrement()));
         }
     }
 
@@ -54,26 +46,16 @@ class _06_Shelter {
     }
 
     Optional<Pet> dequeue(Pet.Type type) {
-        switch (type) {
-            case CAT:
-                return pollCat();
-            case DOG:
-                return pollDog();
-        }
-        return Optional.empty();
+        return switch (type) {
+            case CAT -> pollCat();
+            case DOG -> pollDog();
+        };
     }
 
-    @Data
-    private static class RegisteredPet {
-        private final Pet pet;
-        private final int registerId;
+    private record RegisteredPet(Pet pet, int registerId) {
     }
 
-    @Data
-    public static class Pet {
-
-        public final Type type;
-        public final String name;
+    public record Pet(Type type, String name) {
 
         static Pet cat(String name) {
             return new Pet(Pet.Type.CAT, name);

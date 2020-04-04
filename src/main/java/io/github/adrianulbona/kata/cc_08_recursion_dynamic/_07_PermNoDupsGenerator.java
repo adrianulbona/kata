@@ -6,7 +6,7 @@ import java.util.stream.Stream;
 import static java.util.function.Function.identity;
 import static java.util.stream.IntStream.range;
 
-public class _07_PermNoDupsGenerator implements Function<String, Stream<String>> {
+class _07_PermNoDupsGenerator implements Function<String, Stream<String>> {
 
     @Override
     public Stream<String> apply(String s) {

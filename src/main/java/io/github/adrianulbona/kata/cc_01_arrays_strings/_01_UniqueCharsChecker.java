@@ -5,7 +5,7 @@ import java.util.function.Predicate;
 
 import static java.util.stream.IntStream.range;
 
-public class _01_UniqueCharsChecker implements Predicate<char[]> {
+class _01_UniqueCharsChecker implements Predicate<char[]> {
 
     @Override
     public boolean test(char[] chars) {

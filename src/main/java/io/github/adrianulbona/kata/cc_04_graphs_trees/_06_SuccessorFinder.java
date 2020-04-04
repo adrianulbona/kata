@@ -4,7 +4,7 @@ import java.util.function.Function;
 
 import static io.github.adrianulbona.kata.cc_04_graphs_trees.Node.NIL;
 
-public class _06_SuccessorFinder implements Function<Node, Node> {
+class _06_SuccessorFinder implements Function<Node, Node> {
 
     @Override
     public Node apply(Node node) {

@@ -10,7 +10,7 @@ import static java.util.stream.Collectors.toUnmodifiableSet;
 import static java.util.stream.Stream.concat;
 import static java.util.stream.Stream.of;
 
-public class _09_BinarySearchTreeSequences implements Function<Node, Set<List<Integer>>> {
+class _09_BinarySearchTreeSequences implements Function<Node, Set<List<Integer>>> {
 
     @Override
     public Set<List<Integer>> apply(Node node) {

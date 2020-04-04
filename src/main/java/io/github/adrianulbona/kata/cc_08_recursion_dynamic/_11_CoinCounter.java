@@ -5,7 +5,7 @@ import java.util.function.BiFunction;
 
 import static java.util.stream.IntStream.rangeClosed;
 
-public class _11_CoinCounter implements BiFunction<Integer, List<Integer>, Integer> {
+class _11_CoinCounter implements BiFunction<Integer, List<Integer>, Integer> {
 
     @Override
     public Integer apply(Integer n, List<Integer> coins) {

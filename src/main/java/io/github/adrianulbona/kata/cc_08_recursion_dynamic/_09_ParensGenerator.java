@@ -5,7 +5,7 @@ import java.util.stream.Stream;
 
 import static java.util.stream.Stream.of;
 
-public class _09_ParensGenerator implements Function<Integer, Stream<String>> {
+class _09_ParensGenerator implements Function<Integer, Stream<String>> {
 
     @Override
     public Stream<String> apply(Integer n) {

@@ -5,7 +5,7 @@ import java.util.function.Function;
 import static io.github.adrianulbona.kata.cc_02_lists.Node.NIL;
 import static io.github.adrianulbona.kata.cc_02_lists.Node.node;
 
-public class _01_DuplicatesRemover implements Function<Node, Node> {
+class _01_DuplicatesRemover implements Function<Node, Node> {
 
     @Override
     public Node apply(Node node) {

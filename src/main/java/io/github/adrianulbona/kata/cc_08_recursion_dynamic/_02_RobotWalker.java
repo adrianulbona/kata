@@ -1,7 +1,5 @@
 package io.github.adrianulbona.kata.cc_08_recursion_dynamic;
 
-import lombok.Data;
-
 import java.util.List;
 import java.util.Set;
 import java.util.function.Function;
@@ -32,12 +30,7 @@ class _02_RobotWalker implements Function<Grid, Set<List<Coord>>> {
                 .flatMap(extendedPath -> explore(extendedPath, grid));
     }
 
-    @Data
-    static class Grid {
-
-        private final int rows;
-        private final int columns;
-        private final Set<Coord> offLimitCells;
+    record Grid(int rows, int columns, Set<Coord> offLimitCells) {
 
         static Grid of(int rows, int columns, Set<Coord> offLimitCells) {
             return new Grid(rows, columns, offLimitCells);

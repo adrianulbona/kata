@@ -48,5 +48,4 @@ class _10_SubTreeCheckerTest {
 
         assertTrue(checker.test(child, tree));
     }
-
 }

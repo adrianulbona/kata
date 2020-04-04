@@ -1,7 +1,5 @@
 package io.github.adrianulbona.kata.cc_04_graphs_trees;
 
-import lombok.Data;
-
 import java.util.List;
 import java.util.Set;
 import java.util.function.BiFunction;
@@ -13,7 +11,7 @@ import static java.util.stream.Collectors.toUnmodifiableList;
 import static java.util.stream.Collectors.toUnmodifiableSet;
 import static java.util.stream.Stream.concat;
 
-public class _07_DependencyBuildOrder
+class _07_DependencyBuildOrder
         implements BiFunction<Set<String>, List<Dependency>, List<Set<String>>> {
 
     @Override
@@ -38,10 +36,7 @@ public class _07_DependencyBuildOrder
                 .collect(toUnmodifiableList());
     }
 
-    @Data
-    static class Dependency {
-        private final String from;
-        private final String to;
+    record Dependency(String from, String to){
 
         static Dependency dep(String from, String to) {
             return new Dependency(from, to);

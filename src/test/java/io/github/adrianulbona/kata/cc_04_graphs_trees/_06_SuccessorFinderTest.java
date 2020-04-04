@@ -27,7 +27,6 @@ class _06_SuccessorFinderTest {
         assertEquals(node_2, finder.apply(node_1));
     }
 
-
     @Test
     void applyChildGrandParent() {
         final Function<Node, Node> finder = new _06_SuccessorFinder();
@@ -39,5 +38,4 @@ class _06_SuccessorFinderTest {
 
         assertEquals(node_5, finder.apply(node_3));
     }
-
 }

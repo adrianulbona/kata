@@ -1,25 +1,22 @@
 package io.github.adrianulbona.kata.cc_04_graphs_trees;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import java.util.Objects;
+import java.util.concurrent.atomic.AtomicReference;
 
-@Data
-public class Node {
+record Node(AtomicReference<Node> parentRef, Integer value, Node left, Node right, Integer size) {
 
-    public static final Node NIL = new Node(null, null, null, 0);
+    public static final Node NIL = new Node(null,null, null, null, 0);
 
-    @ToString.Exclude
-    @EqualsAndHashCode.Exclude
-    private Node parent = NIL;
+    public Node parent() {
+        return parentRef.get();
+    }
 
-    private final Integer value;
-    private final Node left;
-    private final Node right;
-    private final Integer size;
+    public void parent(Node parent) {
+        this.parentRef.set(parent);
+    }
 
     public static Node node(int value, Node left, Node right) {
-        final Node node = new Node(value, left, right, 1 + left.size + right.size);
+        final Node node = new Node(new AtomicReference<>(NIL), value, left, right, 1 + left.size + right.size);
         if (!NIL.equals(left)) {
             left.parent(node);
         }
@@ -30,6 +27,27 @@ public class Node {
     }
 
     public static Node node(int value) {
-        return new Node(value, NIL, NIL, 1);
+        return new Node(new AtomicReference<>(NIL), value, NIL, NIL, 1);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        final Node node = (Node) o;
+        return Objects.equals(value, node.value) &&
+                Objects.equals(left, node.left) &&
+                Objects.equals(right, node.right) &&
+                Objects.equals(size, node.size);
+    }
+
+    @Override
+    public String toString() {
+        return "Node{" +
+                "value=" + value +
+                ", left=" + left +
+                ", right=" + right +
+                ", size=" + size +
+                '}';
     }
 }

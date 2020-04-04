@@ -6,7 +6,7 @@ import java.util.function.Function;
 import static java.util.Arrays.stream;
 import static java.util.stream.IntStream.range;
 
-public class _07_MatrixRotater implements Function<int[][], int[][]> {
+class _07_MatrixRotater implements Function<int[][], int[][]> {
 
     @Override
     public int[][] apply(int[][] matrix) {

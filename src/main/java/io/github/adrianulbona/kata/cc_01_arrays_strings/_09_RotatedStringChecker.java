@@ -4,7 +4,7 @@ import java.util.function.BiPredicate;
 
 import static java.util.stream.IntStream.range;
 
-public class _09_RotatedStringChecker implements BiPredicate<String, String> {
+class _09_RotatedStringChecker implements BiPredicate<String, String> {
 
     @Override
     public boolean test(String s1, String s2) {

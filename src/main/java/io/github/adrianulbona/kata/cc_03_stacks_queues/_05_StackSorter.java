@@ -2,7 +2,7 @@ package io.github.adrianulbona.kata.cc_03_stacks_queues;
 
 import java.util.function.Function;
 
-public class _05_StackSorter implements Function<Stack<Integer>, Stack<Integer>> {
+class _05_StackSorter implements Function<Stack<Integer>, Stack<Integer>> {
 
     @Override
     public Stack<Integer> apply(Stack<Integer> stack) {

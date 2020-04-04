@@ -2,7 +2,7 @@ package io.github.adrianulbona.kata.cc_05_bits;
 
 import static java.util.stream.IntStream.rangeClosed;
 
-public class _08_LinePainter {
+class _08_LinePainter {
 
     public long apply(int x1, int y1, int x2, int y2) {
         int xMin = Math.min(x1, x2);

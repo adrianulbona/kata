@@ -5,7 +5,7 @@ import java.util.function.Function;
 
 import static java.util.stream.Collectors.toList;
 
-public class _13_BoxStacker implements Function<List<Box>, Integer> {
+class _13_BoxStacker implements Function<List<Box>, Integer> {
 
     @Override
     public Integer apply(List<Box> boxes) {

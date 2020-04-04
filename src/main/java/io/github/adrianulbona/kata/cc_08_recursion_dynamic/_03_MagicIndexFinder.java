@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
 
-public class _03_MagicIndexFinder implements Function<List<Integer>, Optional<Integer>> {
+class _03_MagicIndexFinder implements Function<List<Integer>, Optional<Integer>> {
 
     @Override
     public Optional<Integer> apply(List<Integer> integers) {

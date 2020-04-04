@@ -6,7 +6,7 @@ import java.util.function.BiFunction;
 
 import static io.github.adrianulbona.kata.cc_04_graphs_trees.Node.NIL;
 import static io.github.adrianulbona.kata.cc_04_graphs_trees.Node.node;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class _08_FirstCommonAncestorTest {
 

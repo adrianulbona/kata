@@ -8,7 +8,7 @@ import static java.util.stream.Collectors.toSet;
 import static java.util.stream.Stream.concat;
 import static java.util.stream.Stream.of;
 
-public class _04_PowerSetFinder implements Function<Set<Integer>, Set<Set<Integer>>> {
+class _04_PowerSetFinder implements Function<Set<Integer>, Set<Set<Integer>>> {
 
     @Override
     public Set<Set<Integer>> apply(Set<Integer> set) {

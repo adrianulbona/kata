@@ -1,11 +1,6 @@
 package io.github.adrianulbona.kata.cc_03_stacks_queues;
 
-import lombok.RequiredArgsConstructor;
-
-@RequiredArgsConstructor
-class _02_StackWithMin implements Stack<Integer> {
-    private final Stack<Integer> stack;
-    private final Stack<Integer> mins;
+record _02_StackWithMin(Stack<Integer> stack, Stack<Integer> mins) implements Stack<Integer> {
 
     static _02_StackWithMin create() {
         return new _02_StackWithMin(StackImpl.create(), StackImpl.create());

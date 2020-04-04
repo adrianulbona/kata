@@ -2,7 +2,7 @@ package io.github.adrianulbona.kata.cc_02_lists;
 
 import java.util.function.BiPredicate;
 
-public class _07_IntersectionChecker implements BiPredicate<Node, Node> {
+class _07_IntersectionChecker implements BiPredicate<Node, Node> {
 
     @Override
     public boolean test(Node first, Node second) {

@@ -1,13 +1,6 @@
 package io.github.adrianulbona.kata.cc_08_recursion_dynamic;
 
-import lombok.Data;
-
-@Data
-public class Box {
-
-    private final int width;
-    private final int height;
-    private final int depth;
+record Box(int width, int height, int depth) {
 
     public static Box of(int width, int height, int depth) {
         return new Box(width, height, depth);
